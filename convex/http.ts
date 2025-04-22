@@ -3,8 +3,11 @@ import { WebhookEvent } from "@clerk/nextjs/server";
 import { Webhook } from "svix";
 import { api } from "./_generated/api";
 import { httpAction } from "./_generated/server";
+import {GoogleGenerativeAI} from "@google/generative-ai";
 
 const http = httpRouter();
+
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY as string);
 
 http.route({
     path: "/clerk-webhook",
@@ -66,6 +69,22 @@ http.route({
         return new Response("Webhook processed successfully", { status: 200 });
 
     })
+});
+
+http.route({
+    path: "/vapi/generate-program",
+    method: "POST",
+    handler: httpAction(async (ctx, req ) => {
+        try {
+            const payload = await req.json();
+
+            const {}
+        } catch (error) {
+            
+        }
+    }
+
+    )
 })
 
 
