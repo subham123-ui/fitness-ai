@@ -1,5 +1,5 @@
-/* eslint-disable @next/next/no-img-element */
-/* eslint-disable @typescript-eslint/no-explicit-any */
+
+
 "use client";
 
 import { Button } from "@/components/ui/button";
@@ -204,6 +204,7 @@ const GenerateProgramPage = () => {
                     alt="AI Assistant"
                     className="w-full h-full object-cover"
                   />
+                  
                 </div>
               </div>
 
